@@ -17,7 +17,7 @@ print('Hi,{name}, you are {age}.') #template literal
 """ dir=> tüm methodları göstermek için kullanılır."""
 
 email= "yasin@gmail.com"
-print(email[::-1])
+print(email[::-1]) #stringi tersten yazdırma
 print(email[3:])
 print(email[::2])
 
