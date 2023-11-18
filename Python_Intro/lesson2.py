@@ -50,3 +50,19 @@ print(divmod(-19,10))
 # bool(None == 0) => False
 # bool(None == None) => True
 # type(age) == int
+
+#  not type(age) == int
+#* 100 > age > 0 ==> age < 100 and age > 0
+
+# ! Conditional
+gender = "M"
+
+if type(age) == int or type(age) == float or age.isdigit():
+    if(age>=18 and gender == "M") or (gender == "F"):
+        print("iceri girebilir")
+    elif(age > 20):
+        print("elif")
+    else:
+        print("bos")
+else:
+    print("Dogru bilgi girin")
