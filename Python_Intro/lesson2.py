@@ -60,9 +60,9 @@ gender = "M"
 if type(age) == int or type(age) == float or age.isdigit():
     if(age>=18 and gender == "M") or (gender == "F"):
         print("iceri girebilir")
-    elif(age > 20):
-        print("elif")
+    elif(age >= 16):
+        print(f"{18-age} sene kaldı")
     else:
-        print("bos")
+        print("git buradan uyuz herif")
 else:
-    print("Dogru bilgi girin")
+    print("Dogru bilgi vermedin sorry")
