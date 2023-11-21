@@ -55,3 +55,40 @@ del mm_items[0] # pop gibi değil direkt siler
 for index in range(len(mm_items)): 
     # print(index)
     print(mm_items[index] * 1.1)
+    
+print(10 * "*")
+
+for data in items:
+    print(data)
+    
+print(10 * "*")
+
+for index in range(10,50,5): # 10 - 50 arası 5'er basamakla gitti 
+    print(index)
+    
+yasin_items = []
+for data in mm_items:
+    data += 20
+    yasin_items.append(data)
+    
+#! tuple'laştırma
+for data in enumerate(mm_items):
+    print(data)
+
+# (0, 90)
+# (1, 80)
+# (2, 15)
+# (3, 70)
+# (4, 60)
+# (5, 560)
+# (6, 50)
+# (7, 40)
+# (8, 30)
+# (9, 20)
+
+for data in enumerate(mm_items):
+    print(data[0]) # index bilgisi
+    print(data[1]) # içeriğin(veri) kendi bilgis
+
+#? items[data[0]] = data[1] + 20
+
