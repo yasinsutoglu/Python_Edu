@@ -11,12 +11,12 @@ if age.isdigit():
     print(int(age))
 
 # ? tam bolme , mod alma
-19 // 10
-19 % 10
+# 19 // 10
+# 19 % 10
 
 #? divmod
-divmod(19,10)
-print(divmod(-19,10))
+# divmod(19,10)
+# print(divmod(-19,10))
 
 #? arttırma / azaltma /çarpma /bolme
 # age = age + 1

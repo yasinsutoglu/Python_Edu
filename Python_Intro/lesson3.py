@@ -13,8 +13,8 @@ print(user_info[len(user_info) - 1])
 #dir(user_info)
 #? doubleUnder (__) => "dunder" deniyormus
 
-if not 1 + 1 == 3: 
-    print("Hello")
+# if not 1 + 1 == 3: 
+#     print("Hello")
     
 items = [10 , 20 ,30 , 40 , 50 , 60 , 70 , 80 , 90 , 100]
 print(items[::2]) # cıktı => [10, 30, 50, 70, 90]
@@ -48,7 +48,9 @@ print(items)
 print(mm_items)
 del mm_items[0] # pop gibi değil direkt siler
 
-# for item in range(0,10): # 10 dahil değil
+
+# 10 dahil değil
+#! for item in range(0,10): 
 #     print(item)
 
 
