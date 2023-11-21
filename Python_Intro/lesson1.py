@@ -32,3 +32,5 @@ age = 19
 # fstring diye geçiyor js template literal ile aynı
 full_name = f"{first_name} {last_name} {age} yasindadir. Seneye {age + 1} yasinda olacaktir."
 print(full_name)
+
+#terminalde =>  python lesson1.py

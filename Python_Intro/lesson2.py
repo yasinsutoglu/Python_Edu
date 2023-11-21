@@ -63,6 +63,6 @@ if type(age) == int or type(age) == float or age.isdigit():
     elif(age >= 16):
         print(f"{18-age} sene kaldı")
     else:
-        print("git buradan uyuz herif")
+        print("sakjakjshflaskdşa")
 else:
     print("Dogru bilgi vermedin sorry")
