@@ -88,7 +88,25 @@ for data in enumerate(mm_items):
 
 for data in enumerate(mm_items):
     print(data[0]) # index bilgisi
-    print(data[1]) # içeriğin(veri) kendi bilgis
+    print(data[1]) # içeriğin(veri) kendi bilgisi
 
 #? items[data[0]] = data[1] + 20
 
+user = ["Yasin" , "Sutoglu"]
+
+first_name , last_name = user
+
+print(first_name, last_name)
+
+user_info2 = ["Yasin" , "Sutoglu" , 19 , "male", "Python" , "F1"]
+
+fst_name, lst_name , *others = user_info2
+
+print(fst_name, lst_name , others)
+
+for index , info in enumerate(mm_items):
+    if 70 > info > 50:
+        mm_items[index] = info + 20
+        print(index,info)
+
+print(mm_items)
