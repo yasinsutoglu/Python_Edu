@@ -28,7 +28,7 @@ if age.isdigit():
 #? square
 # age ** 2
 
-#? operatorler
+#? boolean operatorler
 # > , < , >= , <= , == , and , or , not , !=, is , is not , in , not in
 
 # x **= 3 ==> x = x ** 3

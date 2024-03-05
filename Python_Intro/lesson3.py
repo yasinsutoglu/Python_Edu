@@ -93,19 +93,20 @@ for data in enumerate(mm_items):
     print(data[1]) # içeriğin(veri) kendi bilgisi
 
 #? items[data[0]] = data[1] + 20
-
+#!destruct1(unpacking)
 user = ["Yasin" , "Sutoglu"]
 
 first_name , last_name = user
 
 print(first_name, last_name)
-
+#!destruct2(unpacking)
 user_info2 = ["Yasin" , "Sutoglu" , 19 , "male", "Python" , "F1"]
 
 fst_name, lst_name , *others = user_info2
 
 print(fst_name, lst_name , others)
 
+#!destruct in list and tuple
 for index , info in enumerate(mm_items):
     if 70 > info > 50:
         mm_items[index] = info + 20
