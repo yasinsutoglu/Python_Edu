@@ -100,11 +100,14 @@ today = dt.date.today()
 today - delta  # the date 100 days ago
 today > today - delta  # compare dates
 
-# The Python Programming Language: Objects and map()
+########################################
+# The Python Programming Language: BRIEF OOP
 #An example of a class in python:
 class Person:
     department = 'School of Information'  #a class variable
-
+    # private ve protected olayı pythonda yoktur. Tam access var attribute ve methodlara.
+    # explicit constructor'a ihtiyaç yoktur.
+    # constructor tamılayacaksan =>  def __init__(self): şeklinde tanımlanır.
     def set_name(self, new_name):  #a method
         self.name = new_name
 
@@ -116,17 +119,21 @@ person.set_name('Christopher Brooks')
 person.set_location('Ann Arbor, MI, USA')
 print('{} live in {} and works in the department {}'.format(person.name, person.location, person.department))
 
+
+################### MAP FUNCTION #############
 # Here's an example of mapping the min function between two lists.
 store1 = [10.00, 11.00, 12.34, 2.34]
 store2 = [9.00, 11.10, 12.34, 2.01]
 cheapest = map(min, store1, store2)
 cheapest
+# map() => bize map object return eder.
 
 #Now let's iterate through the map object to see the values.
 for item in cheapest:
     print(item)
 
-#The Python Programming Language: Lambda and List Comprehensions
+###############################################
+#The Python Programming Language: LAMBDA FUNCTION
 #Here's an example of lambda that takes in three parameters and adds the first two.
 my_function = lambda a, b, c: a + b
 my_function(1, 2, 3)
@@ -138,6 +145,33 @@ for number in range(0, 1000):
         my_list.append(number)
 my_list
 
-#Now the same thing but with list comprehension.
+# Example
+people = ['Dr. Christopher Brooks', 'Dr. Kevyn Collins-Thompson', 'Dr. VG Vinod Vydiswaran', 'Dr. Daniel Romero']
+
+def split_title_and_name(person):
+    return person.split()[0] + ' ' + person.split()[-1]
+
+#option 1
+for person in people:
+    print(split_title_and_name(person) == (lambda x: x.split()[0] + ' ' + x.split()[-1])(person))
+
+#option 2
+list(map(split_title_and_name, people)) == list(map(lambda person: person.split()[0] + ' ' + person.split()[-1], people))
+
+##################################################
+#Now the same thing but with LIST COMPREHENSION
 my_list = [number for number in range(0, 1000) if number % 2 == 0]
 my_list
+
+#Example
+def times_tables():
+    lst = []
+    for i in range(10):
+        for j in range (10):
+            lst.append(i*j)
+    return lst
+
+times_tables() == [j*i for i in range(10) for j in range(10)]
+
+
+
