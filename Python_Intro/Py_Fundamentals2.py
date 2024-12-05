@@ -193,7 +193,7 @@
 # show_pic() -- calling the func. should be after definition
 # print(show_pic) --> <function show_pic ar 0x7ff8....>
 
-# -PARAMETERS & ARGUMENTS-
+# PARAMETERS & ARGUMENTS
 # Used to make functions dynamic
 # Rule( def. order) : params, *args, default parameters, **kwargs
 
@@ -364,3 +364,5 @@
 # inner: nonlocal
 # outer: nonlocal
 
+# ---------------------
+# PEP (Python Enhancement Proposals) - PEP 8 is most popular one.
