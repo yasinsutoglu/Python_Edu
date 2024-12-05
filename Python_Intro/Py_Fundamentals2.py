@@ -320,4 +320,47 @@
 # [clean_name.title() for name in names if (clean_name := normalize('NFC', name)) in allowed_names]
 
 # ---------------------------------------------
-# SCOPE
+# SCOPE -->It is what variables I have access to!
+# Using scope is useful for effective usage of Garbage Collector.
+# global scope - local scope (inside function, conditionals, loops etc.)
+# Variable Check Rules in PY:
+# 1 - start with local
+# 2 - Parent local?
+# 3 - global
+# 4 - is built-in python functions
+
+# Ex:
+# total = 0
+# def count():
+# 	global total # If you don't use "global" --> UnboundLocalError: cannot access local variable
+# 				 # 'total' where it is not associated with a value
+# 	total+=1
+# 	return total
+#
+# count()
+# count()
+# print(count())
+
+# Dependency Injection is simplified version of this usage.
+# Ex:
+# total = 0
+# def count(total):
+# 	total+=1
+# 	return total
+
+# print(count(count(count(total))))
+
+# ---nonlocal keyword--- Closures---
+# def outer():
+#     x = "local"
+#     def inner():
+#         nonlocal x
+#         x = "nonlocal"
+#         print("inner:", x)
+#     inner()
+#     print("outer:", x)
+# outer()
+
+# inner: nonlocal
+# outer: nonlocal
+
