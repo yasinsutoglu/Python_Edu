@@ -210,8 +210,6 @@ defualt methods suggestions from the IDE.
  Polymorphism(many forms) --> Even though we are using the same function, it is giving different 
  output based on the object.
 '''
-
-
 # class User():
 # 	def signed_in(self):
 # 		print("User is logged in.")
@@ -274,3 +272,14 @@ defualt methods suggestions from the IDE.
 #
 # wizard1 = Wizard("John", 50, 'john@gmail.com')
 # print(wizard1.email)
+
+# ----------------------------
+# OBJECT INTROSPECTION
+# print(dir(list))
+'''
+It gives us all the methods and attributes that the item has access to.
+But we get this functionality with IDEs build in, when we type item or instance name dot for eg.list.
+and then IDE will pop a window with all the methods and attributes it has access to.
+'''
+# ----------------------------
+# DUNDER/MAGIC METHODS
