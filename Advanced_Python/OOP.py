@@ -25,7 +25,8 @@ Every class method should have first argument as 'self'
 and first method should be __init__ method.
 '''
 # class PlayerCharacter: # 'self === PlayerCharacter'
-# 	membership = True # Class Object Attribute, it's an attribute of PlayerCharacter. It is a STATIC attribute.
+# 	membership = True # Class Object Attribute, it's an attribute of PlayerCharacter.
+# 	It is a STATIC attribute.
 #
 # 	def __init__(self, name='anonymous', age=0):
 # 		if self.membership: # or we can write: 'if PlayerCharacter.membership :
@@ -95,7 +96,8 @@ and first method should be __init__ method.
 
 # ----------------------------
 # ENCAPSULATION
-# The term states the process of binding the datas and the methods manipulating these datas to an Object.
+# The term states the process of binding the datas and
+# the methods manipulating these datas to an Object.
 # Actually, all the things we have done until this point.
 
 # ABSTRACTION
@@ -123,28 +125,29 @@ and first method should be __init__ method.
 '''
 Here the user has overwritten the class attributes and methods.
 Which we would ideally don't want users to do.
-However for other users, like player2, all the orginal attributes and methods functionality is intact.
+However for other users,like player2,all the original attributes&methods functionality is intact.
 Hence there is a need for Private attributes and methods, so the user cannot modify them.
 
 But in Python the concept of Private is not there, so we have to work around that. 
 
 So, we can use:
-    class PlayerCharacter:
-        def __init__(self, name, age):
-            self._name = name  
-            self._age = age
+class PlayerCharacter:
+    def __init__(self, name, age):
+        self._name = name  
+        self._age = age
             
-		def _run(self):  # PRIVATE METHOD
-			print(f"run {self.name}")
+	def _run(self):  --> PRIVATE METHOD
+		print(f"run {self.name}")
 
-    player1 = PlayerCharacter("Rohan", 22)
-    player1.name = "!!!!" 
+player1 = PlayerCharacter("Rohan", 22)
+player1.name = "!!!!" 
 
-The user can still modify the attribute, by using 'player1._name = "!!!!"', but we are just letting him know
-that '_name' is a private variable, and you should not change it.
+The user can still modify the attribute, by using 'player1._name = "!!!!"', but we are just letting 
+him know that '_name' is a private variable, and you should not change it.
 
-It's a naming convention to start a private variable with '_' (an underscore), so other users will get to know about it.
-Similarly we don't ever modify 'DUNDER/MAGIC' methods, they start and ends with two underscores (for eg. __init__)
+It's a naming convention to start a private variable with '_' (an underscore), 
+so other users will get to know about it.Similarly we don't ever modify 'DUNDER/MAGIC' methods,
+they start and ends with two underscores (for eg. __init__)
 '''
 # ----------------------------
 # INHERITANCE
@@ -177,7 +180,7 @@ Similarly we don't ever modify 'DUNDER/MAGIC' methods, they start and ends with 
 # 	    print(f"{self.num_arrows} arrows left.")
 #
 # Another Child Class with  Multiple Inheritance
-# class HybridAttacker(Wizard, Archer):   # notice the order, in that order only it will give preference
+# class HybridAttacker(Wizard, Archer): # notice the order, in that order only it will give preference
 #     def __init__(self, name, power, num_arrows):
 #         Wizard.__init__(self,name,power)
 #         Archer.__init__(self,name,num_arrows)
@@ -201,14 +204,14 @@ Similarly we don't ever modify 'DUNDER/MAGIC' methods, they start and ends with 
 # print(isinstance(wizard1, object)) # True
 #
 '''
-By default every class is a subclass of 'object' class, hence when we type 'instance.' (object_name dot), we get all those
-defualt methods suggestions from the IDE.
+By default every class is a subclass of 'object' class, hence when we type 'instance.' 
+(object_name dot), we get all those defualt methods suggestions from the IDE.
 '''
 # ----------------------------
 # POLYMORPHISM
 '''
- Polymorphism(many forms) --> Even though we are using the same function, it is giving different 
- output based on the object.
+Polymorphism(many forms) --> Even though we are using the same function, 
+it is giving different output based on the object.
 '''
 # class User():
 # 	def signed_in(self):
@@ -216,7 +219,6 @@ defualt methods suggestions from the IDE.
 #
 # 	def attack(self):
 # 		print("Do nothing.")
-#
 #
 # class Wizard(User):
 # 	def __init__(self, name, power):
@@ -249,7 +251,8 @@ defualt methods suggestions from the IDE.
 # for char in [wizard1, archer1]:
 #     char.attack()
 
-# # notice that these two instances are executing the child class method and not the parent class method.
+# # notice that these two instances are executing the child class
+# # method and not the parent class method.
 
 # SUPER()
 # class User():
@@ -274,12 +277,110 @@ defualt methods suggestions from the IDE.
 # print(wizard1.email)
 
 # ----------------------------
-# OBJECT INTROSPECTION
+# *********** OBJECT INTROSPECTION ***************
 # print(dir(list))
 '''
 It gives us all the methods and attributes that the item has access to.
-But we get this functionality with IDEs build in, when we type item or instance name dot for eg.list.
+But we get this functionality with IDEs build in,when we type item or instance name dot for eg.list.
 and then IDE will pop a window with all the methods and attributes it has access to.
 '''
 # ----------------------------
 # DUNDER/MAGIC METHODS
+# Special Methods that python recognizes.
+# class ActionFig():
+# 	def __init__(self, color, age):
+# 		self.color = color
+# 		self.age = age
+# 		self.my_dict = {"name": "yoyo", "has_pets": "Dog"}
+#
+# 	def __str__(self): # We are overriding "str()" in here for this Class only!
+# 					   # But, should be done for special cases!
+# 		return f'{self.color}'
+#
+# 	def __len__(self):
+# 		return 5
+#
+# 	def __call__(self):
+# 		return 'hello...??'
+#
+# 	def __getitem__(self, i):
+# 		return self.my_dict[i]
+#
+# 	def __del__(self):
+# 		return 'deleted'
+#
+#
+# hulk = ActionFig("red", 0)
+#
+# print(hulk.__str__()) # red
+# print(hulk)
+# print(str(hulk)) # red
+# print(str('Printing an string'))
+#
+# print(hulk.__len__()) # 5
+# print(len(hulk)) # 5
+# print(len('0123456789'))
+#
+# print(hulk.__call__()) # 'hello...??'
+# print(hulk())  # with call method, we get this special power to call a method with parenthesis
+#
+# print(hulk.__getitem__("has_pets"))
+# print(hulk['name']) # with getitem method, we get this special power to get the prop with brackets
+#
+# print(hulk.__repr__())  # it is same as print(hulk), it prints the memory location of the object
+#
+# print(hulk.__del__()) # "deleted!"
+# del hulk  # this deletes the variable passed, but as we have modified it,
+#           # it won't delete the instance now
+#
+# a = 5
+# del a
+# print(a)
+'''
+this will give us error, because we have deleted the variable a, 
+because we haven't modified the base class __del__ method, so its performing normal
+'''
+# ----------------------------
+# Extending List
+
+# class SuperList(list): # See the Inheritance from 'list' object!
+#     def __len__(self):
+#         return 1000
+#
+# super_list1 = SuperList()
+# print(len(super_list1))
+#
+# super_list1.append(5)
+# super_list1.append(100)
+# print(super_list1[0])
+#
+# print(issubclass(SuperList, list))
+# print(issubclass(list, object)) # remember isinstance() also :D
+# ---------------------------------------
+# METHOD RESOLUTION ORDER
+# it tells the order of the preferences for classes
+# class A:
+#     num = 10
+# class B(A):
+#     pass
+# class C(A):
+#     num = 1
+# class D(B,C):
+#     pass
+#
+# print(D.num)
+#
+# print(D.mro())
+# print(D.__mro__)
+# # both the above are same
+
+# # Ex-2
+# class X:pass
+# class Y:pass
+# class Z:pass
+# class A(X,Y):pass
+# class B(Y,Z):pass
+# class M(B,A,Z):pass
+#
+# print(M.mro())
+# avoid using this in codes, because MRO rules are very confusing to understand.
