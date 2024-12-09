@@ -16,20 +16,23 @@
 # print(shopping.shopping_cart.buy('shoe'))
 
 # ------------------------------------------
-from utilities import *  # all includings of the file imported
-from Python_Edu.Modules.shopping import shopping_cart
-
-# print(utilities)    # gives error
-print(mult(4,10))
-print(divide(52,3))
-
-# print(shopping)    # gives error
-print(shopping_cart)
-print(shopping_cart.buy('banana'))
+# from utilities import *  # all includings of the file imported
+# from Python_Edu.Modules.shopping import shopping_cart
+#
+# # print(utilities)    # gives error
+# print(mult(4,10))
+# print(divide(52,3))
+#
+# # print(shopping)    # gives error
+# print(shopping_cart)
+# print(shopping_cart.buy('banana'))
 
 # ------------------------------------------
 from utilities import mult, divide
 from Python_Edu.Modules.shopping.shopping_cart import buy
+# Below 2 lines are the output of imported modules "print(__name__)" :
+# utilities
+# Python_Edu.Modules.shopping.shopping_cart
 
 # print(utilities)  # gives error
 print(mult)
