@@ -161,7 +161,7 @@ and behaves exactly like a function.
 #     'd': 4
 #     }
 #
-# my_new_dict = {k:v**2 for k,v in random_dict.items()}
+# my_new_dict = {key:value**2 for key,value in random_dict.items()}
 # print(my_new_dict)
 #
 # my_new_dict2 = {k:v**2 for k,v in random_dict.items() if v % 2 == 0}
