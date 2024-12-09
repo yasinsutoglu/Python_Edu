@@ -100,4 +100,86 @@ use the same no.s of items in all the iterables, otherwise it can ruin the seque
 # print(list(zip(my_strings, sorted(my_numbers))))
 # ---------------------------------------
 # LAMBDA EXPRESSIONS
+# Anonymous functions that we don't need more than once. We only use them once.
+# Just run it, I'm done with it. It doesn't take place in memory.
+# As IIEF in JS language.
+'''
+syntax:
+lambda param: manipulative_action(param)
+---
+it automatically returns the action taken,
+it do not have any name, doesn't get stored in the memory.
+and so used only once.
+and behaves exactly like a function.
+'''
+# import functools
 #
+# my_list = [1,2,3,4,5]
+#
+# print(list(map(lambda item: item*2 , my_list)))
+
+# print(list(filter(lambda item: item % 2 != 0 , my_list)))
+
+# print(functools.reduce(lambda acc,item: item+acc , my_list))
+
+# EX:
+# a = [(0,2),(4,4),(10,-1),(5,3)]
+#
+# sort() format => sort(key,reverse)
+# a.sort(key=lambda x: x[1], reverse=False)
+# print(a) #[(10, -1), (0, 2), (5, 3), (4, 4)]
+
+# ---------------------COMPREHENSIONS:Quick way to create list,set,dict--------------------
+# *****LIST Comprehensions*****
+# my_list = []
+#
+# for item in 'hello':
+#     my_list.append(item)
+#
+# print(my_list)
+#
+# my_list1 = [item for item in 'Saurabh']
+# print(my_list1) #['S', 'a', 'u', 'r', 'a', 'b', 'h']
+#
+# my_list2 = [num**2 for num in range(1,11)]
+# print(my_list2) #[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# *****SET Comprehensions*****
+# only even squares
+# my_set = {num**2 for num in range(1,11) if num**2 % 2 == 0}
+# print(my_set) #{64, 100, 4, 36, 16}
+# remember that set don't contain duplicate values
+
+# *****DICT Comprehensions*****
+# my_dict = {num:num**2 for num in range(1,11)}
+# print(my_dict)
+#
+# random_dict = {
+#     'a': 1,
+#     'b': 2,
+#     'c': 3,
+#     'd': 4
+#     }
+#
+# my_new_dict = {k:v**2 for k,v in random_dict.items()}
+# print(my_new_dict)
+#
+# my_new_dict2 = {k:v**2 for k,v in random_dict.items() if v % 2 == 0}
+# print(my_new_dict2)
+
+# EXERCISE
+# some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+#
+# duplicates = []
+# for value in some_list:
+#     if some_list.count(value) > 1:
+#         if value not in duplicates:
+#             duplicates.append(value)
+#
+# print(duplicates)
+#
+#
+# #Solution:
+# some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+# duplicates = list(set([x for x in some_list if some_list.count(x) > 1]))
+# print(duplicates)
