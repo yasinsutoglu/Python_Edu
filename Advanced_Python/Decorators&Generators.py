@@ -105,3 +105,6 @@ from time import time
 #     print("message has been sent")
 #
 # message_friends(user1)
+
+# *******************************
+# GENERATORS
