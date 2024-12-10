@@ -18,6 +18,8 @@ class TestGame(unittest.TestCase):
     def test_input_wrong_type(self):
         result = main2.run_guess(int('11'), 5)
         self.assertFalse(isinstance(result, TypeError))
+        # Try to improve this by actually testing for the ValueError it triggers.
+        # self.assertRaises(ValueError) can be used!!
 
 
 if __name__ == '__main__':
