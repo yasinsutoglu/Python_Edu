@@ -134,9 +134,9 @@ print(time())   # time in unix code
 
 arr = array('i', [1,2,3])
 print(arr)
-print(arr[0])
+print(arr[0]) # 1
 '''
-# array in python are faster than list, and takes less memory.
+# array(typecode, initializer_list) in python are faster than list, and takes less memory.
 # the first argument is the 'typecode'
 'f' = float (4 byte)
 'd' = double (8 byte)
