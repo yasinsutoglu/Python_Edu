@@ -1,4 +1,4 @@
-#([A-Za-z0-9$%#@]{7,}[0-9]) --> password validation regex
+# https://regex101.com/
 import re
 
 my_string = "this is a really cool string really!"
@@ -40,6 +40,7 @@ email_pattern = re.compile(r"([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
 check_email = email_pattern.fullmatch('saurabh_1089@gmail.com')
 
 password_pattern = re.compile(r"([a-zA-Z0-9@#$%]{8,}$)")
+# password is also checking for minimum 8 chars
 check_password = password_pattern.fullmatch('12345678')
 
 if check_email and check_password:
@@ -48,5 +49,17 @@ else:
     print("Try again.")
 
 '''
-password is also checking for minimum 8 chars
+() => capturing group
+[] => char group; no length limit
+^ => start with
+. => match any char
++ => concatination
+\. => .
+$ => asserts position at the end of a line
+'jess'{3,} => matches  at least 3 consecutive 'jess' characters.
+a{3,5} => matches between 3 and 5 consecutive 'a' characters.
+
+Example-1: ([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)
+Example-2: ([a-zA-Z0-9@#$%]{8,}$)
+Example-3: ([A-Za-z0-9$%#@]{7,}[0-9]) --> password validation regex
 '''
