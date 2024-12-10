@@ -48,12 +48,12 @@ with open("happy\happy.txt", mode='r') as my_file:
 	print(my_file.read())
 
 '''
-we can give absolute path
-or related path (wrt to the current folder)
+we can give absolute path or related path (wrt to the current folder)
 ../ means go back one folder
 ./ menas start from current folder
 
-pathlib module: for windows, linex paths are different, so we can use this module so that our code works in all machines.
+pathlib module: for windows, linex paths are different, so we can use this module 
+so that our code works in all machines.
 '''
 with open(".\happy\happy.txt", mode='a') as my_file:
 	text = my_file.write("I am HAPPY!")
@@ -73,3 +73,14 @@ translator= Translator(to_lang="es")
 translation = translator.translate(text)
 
 print(translation)
+
+# -----FILE_IO ERRORS----------
+try:
+	with open(".\happy\h.txt", mode='r') as jess_file:
+		print(jess_file.read())
+except FileNotFoundError as err1:
+	print('file does not exist')
+	# raise err
+except IOError as err2:
+	print('IO Error')
+	raise err2
