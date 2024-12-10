@@ -1,5 +1,9 @@
 # If you have 10 pyfile or modules, so you should have 10 test file for each of them.
 # Test file is a .py file also.
+# All the test_function names should be unique in class.
+
+# Alternative Test-Run:
+# Console Command: python3 -m unittest -v
 
 # BASIC PRECAUTIONS Below:
 # pylint
@@ -24,8 +28,8 @@ class TestMain(unittest.TestCase):  # inheriting TestCase class
 		result = main.do_stuff(test_param)
 		self.assertTrue(isinstance(result, ValueError))
 
-	def tearDown(
-			self):  # this method will run after every test method. Generally used to reset/cleaning up data variables.
+	def tearDown(self):
+		# this method will run after every test method. Generally used to reset/cleaning up data variables.
 		print("Cleaning up....")
 
 
