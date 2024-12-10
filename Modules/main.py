@@ -28,7 +28,7 @@
 # print(shopping_cart.buy('banana'))
 
 # ------------------------------------------
-from utilities import mult, divide
+from utilities import mult, divide , jas1
 from Python_Edu.Modules.shopping.shopping_cart import buy
 # Below 2 lines are the output of imported modules "print(__name__)" :
 # utilities
@@ -43,3 +43,17 @@ print(divide(115,3))
 # print(shopping)  # gives error
 # print(shopping.shopping_cart)  # gives error
 print(buy('apple'))
+#-------------------
+# print(__name__) => '__main__'
+# If we rename this file, we get the same print output anyway.
+
+# EX:
+# if __name__ == '__main__':
+# 	print('Main module is running now...')
+#--------------------------------
+# class Student():
+# 	pass
+#
+# st1 = Student()
+# print(type(st1)) # <class '__main__.Student'>
+# print(type(jas1)) # <class 'utilities.Jason'>
