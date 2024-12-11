@@ -16,27 +16,28 @@ print(user.name)  # prints your name.
 print(user.screen_name)
 print(user.followers_count)
 
-search = "bitcoin"
-numberOfTweets = 2
+# public_tweets = api.home_timeline()
+# print(public_tweets)
+
+search_word = "galatasaray"
+numberOfTweets = 20
 
 def limit_handle(cursor):
 	while True:
 		try:
 			yield cursor.next()
-
 		except tweepy.RateLimitError:
 			print("Sleeping now....")
 			time.sleep(10)  # sleeps for 10 secs
 
-
+# Be nice to your followers. Follow everyone!
 # for follower in limit_handle(tweepy.Cursor(api.followers).items()):
 #     print(follower.name)
-#     if follower.name == 'Usernamehere':
+#     if follower.name == 'Username_here':
 #         print(follower.name)
 #         follower.follow()
 
-
-for tweet in tweepy.Cursor(api.search, search).items(numberOfTweets):
+for tweet in tweepy.Cursor(api.search, search_word).items(numberOfTweets):
 	try:
 		tweet.favorite()
 		tweet.retweet()
@@ -52,7 +53,6 @@ for tweet in tweepy.Cursor(api.search, search).items(numberOfTweets):
 # config.py : where I keep my keys as constants
 # import config
 #
-#
 # def about_me(client: tweepy.Client) -> None:
 # 	"""Print information about the client's user."""
 # 	# The `public_metrics` addition will give me my followers count, among other things
@@ -62,10 +62,10 @@ for tweet in tweepy.Cursor(api.search, search).items(numberOfTweets):
 # 	print(f"My followers count: {me.data.public_metrics['followers_count']}")
 #
 #
-# def get_ztm_tweets(client: tweepy.Client) -> list[tweepy.Tweet]:
-# 	"""Return a list of latest ZTM tweets"""
-# 	ztm = client.get_user(username="zerotomasteryio")
-# 	response = client.get_users_tweets(ztm.data.id)
+# def get_my_tweets(client: tweepy.Client) -> list[tweepy.Tweet]:
+# 	"""Return a list of latest my tweets"""
+# 	jessX = client.get_user(username="jess12")
+# 	response = client.get_users_tweets(jessX.data.id)
 # 	return response.data
 #
 #
@@ -80,6 +80,6 @@ for tweet in tweepy.Cursor(api.search, search).items(numberOfTweets):
 # 	print("=== About Me ===")
 # 	about_me(client)
 # 	print()
-# 	print("=== ZTM Tweets ===")
-# 	for tweet in get_ztm_tweets(client):
+# 	print("=== JESS Tweets ===")
+# 	for tweet in get_my_tweets(client):
 # 		print(tweet, end="\n\n")
