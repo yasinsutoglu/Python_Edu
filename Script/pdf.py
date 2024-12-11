@@ -24,17 +24,17 @@ import sys
     #     writer_output.write(new_file)
 
 # -------------------
-inputs = sys.argv[1:]
+# inputs = sys.argv[1:]
 # this will store all the arguments passes except the first one, and store them in a list
 
-def pdf_merger(pdf_list):
-    merger = PyPDF2.PdfMerger()
-    for pdf in pdf_list:
-        print(pdf)
-        merger.append(pdf)
-    merger.write('./PDF/merged2.pdf')
-
-pdf_merger(inputs)
+# def pdf_merger(pdf_list):
+#     merger = PyPDF2.PdfMerger()
+#     for pdf in pdf_list:
+#         print(pdf)
+#         merger.append(pdf)
+#     merger.write('./PDF/merged2.pdf')
+#
+# pdf_merger(inputs)
 
 # --------------------------------------------------------
 # template = PyPDF2.PdfFileReader(open('super.pdf', 'rb'))
@@ -42,17 +42,17 @@ pdf_merger(inputs)
 # output = PyPDF2.PdfFileWriter()
 
 # This is the new way to do this:
-# template = PyPDF2.PdfReader(open('super.pdf', 'rb'))
-# watermark = PyPDF2.PdfReader(open('wtr.pdf', 'rb'))
-# output = PyPDF2.PdfWriter()
+template = PyPDF2.PdfReader(open('./PDF/super.pdf', 'rb'))
+watermark = PyPDF2.PdfReader(open('./PDF/wtr.pdf', 'rb'))
+output = PyPDF2.PdfWriter()
 
 # for i in range(template.getNumPages()):
 
 # New way to do this:
-# for i in range(len(template.pages)):
-# 	page = template.pages[i]
-# 	page.merge_page(watermark.pages[0])
-# 	output.add_page(page)
+for i in range(len(template.pages)):
+	page = template.pages[i]
+	page.merge_page(watermark.pages[0])
+	output.add_page(page)
 
-# with open('watermaked_output.pdf', 'wb') as outputFile:
-# 	output.write(outputFile)
+with open('./PDF/watermaked_output2.pdf', 'wb') as outputFile:
+	output.write(outputFile)
