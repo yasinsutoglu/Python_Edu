@@ -47,6 +47,8 @@ The current version supports all possible conversions between
 source_path = sys.argv[1]
 target_path = sys.argv[2]
 
+# print(source_path,target_path)
+
 if not os.path.exists(target_path):
     os.makedirs(target_path)
 
@@ -54,6 +56,7 @@ for file in os.listdir(source_path):
     img = Image.open(f'{source_path}{file}')
     # new_file = file.replace(".jpg", ".png")    # we can do this or the below command
     new_filename = os.path.splitext(file)[0]    # this keeps the file name without the extension
+    # and splitext make the result in tuple
 # # added the / in case user doesn't enter it. You may want to check for this and add or remove it.
     img.save(f"{target_path}/{new_filename}.png", "png")
 print('all done!')
