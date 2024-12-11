@@ -20,8 +20,8 @@
 # html_temp = Template(Path('./index.html').read_text())
 #
 # email = EmailMessage()
-# email['from'] = 'Universe'
-# email['to'] = 'ysutoglu@gmail.com'
+# email['from'] = 'JASON'
+# email['to'] = '<receiver email address>'
 # email['subject'] = 'You are good person'
 # email.set_content(html_temp.substitute({'name': 'Jess'}), 'html')
 # OR
