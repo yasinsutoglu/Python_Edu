@@ -44,17 +44,17 @@ The current version supports all possible conversions between
 # filtered_img.save("./SavedFiles/thumbnailed.png", "png")
 
 # --------------JPG to PNG------------
-img_path = sys.argv[1]
-new_path = sys.argv[2]
+source_path = sys.argv[1]
+target_path = sys.argv[2]
 
-if not os.path.exists(new_path):
-    os.makedirs(new_path)
+if not os.path.exists(target_path):
+    os.makedirs(target_path)
 
-for filename in os.listdir(img_path):
-    img = Image.open(f'{img_path}{filename}')
+for file in os.listdir(source_path):
+    img = Image.open(f'{source_path}{file}')
     # new_file = file.replace(".jpg", ".png")    # we can do this or the below command
-    new_filename = os.path.splitext(filename)[0]    # this keeps the file name without the extension
-# 	# added the / in case user doesn't enter it. You may want to check for this and add or remover it.
-    img.save(f"{new_path}/{new_filename}.png", "png")
-# 	print('all done!')
+    new_filename = os.path.splitext(file)[0]    # this keeps the file name without the extension
+# # added the / in case user doesn't enter it. You may want to check for this and add or remove it.
+    img.save(f"{target_path}/{new_filename}.png", "png")
+print('all done!')
 
